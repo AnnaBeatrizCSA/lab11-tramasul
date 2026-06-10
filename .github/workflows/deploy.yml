@@ -27,7 +27,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
-            sudo docker build -t tramasul /home/ec2-user/
-            sudo docker stop tramasul-container || true
-            sudo docker rm tramasul-container || true
-            sudo docker run -d -p 80:80 --name tramasul-container tramasul
+            sudo /usr/bin/docker build -t tramasul /home/ec2-user/
+            sudo /usr/bin/docker stop tramasul-container || true
+            sudo /usr/bin/docker rm tramasul-container || true
+            sudo /usr/bin/docker run -d -p 80:80 --name tramasul-container tramasul
